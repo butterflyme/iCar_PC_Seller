@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Property>
+  <Review id="DEFAULT">
+    <Description>property.default.description</Description>
+    <Author></Author>
+    <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">1970-01-01 :: 00:00:00:000 GMT-10:00</CreationDate>
+    <Directory>review</Directory>
+    <Reviewers></Reviewers>
+    <Files/>
+    <FieldItems>
+      <FieldItem id="Type" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.type.label.codingStandards"/>
+        <Entry name="item.type.label.programLogic"/>
+        <Entry name="item.type.label.optimization"/>
+        <Entry name="item.type.label.usability"/>
+        <Entry name="item.type.label.clarity"/>
+        <Entry name="item.type.label.missing"/>
+        <Entry name="item.type.label.irrelevant"/>
+        <Entry name="item.type.label.suggestion"/>
+        <Entry name="item.type.label.other"/>
+      </FieldItem>
+      <FieldItem id="Severity" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.severity.label.critical"/>
+        <Entry name="item.severity.label.major"/>
+        <Entry name="item.severity.label.normal"/>
+        <Entry name="item.severity.label.minor"/>
+        <Entry name="item.severity.label.trivial"/>
+      </FieldItem>
+      <FieldItem id="Resolution" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.resolution.label.validNeedsfixing"/>
+        <Entry name="item.resolution.label.validFixlater"/>
+        <Entry name="item.resolution.label.validDuplicate"/>
+        <Entry name="item.resolution.label.validWontfix"/>
+        <Entry name="item.resolution.label.invalidWontfix"/>
+        <Entry name="item.resolution.label.unsureValidity"/>
+      </FieldItem>
+      <FieldItem id="Status" default="item.status.label.open">
+        <Entry name="item.status.label.open"/>
+        <Entry name="item.status.label.resolved"/>
+        <Entry name="item.status.label.closed"/>
+        <Entry name="item.status.label.reopened"/>
+      </FieldItem>
+    </FieldItems>
+    <Filters>
+      <Phase name="phase.individual" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="item.reviewer.label.automatic" enabled="true"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="" enabled="false"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="false"/>
+        <Filter name="Status" value="item.status.label.open" enabled="false"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+      <Phase name="phase.team" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="" enabled="false"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="" enabled="false"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="true"/>
+        <Filter name="Status" value="item.status.label.open" enabled="false"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+      <Phase name="phase.rework" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="" enabled="false"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="item.reviewer.label.automatic" enabled="true"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="false"/>
+        <Filter name="Status" value="item.status.label.open" enabled="true"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+    </Filters>
+  </Review>
+  <Review id="ishoes_01">
+    <Description>迭代一代码走查</Description>
+    <Author>kemin</Author>
+    <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-09-03 :: 17:27:50:926 CST</CreationDate>
+    <Directory>review</Directory>
+    <Reviewers>
+      <Entry id="dengjie" name="dengjie"/>
+      <Entry id="kemin" name="kemin"/>
+    </Reviewers>
+    <Files>
+      <Entry name="src/main/java/ishoes/dao/message/ApnsDAO.java"/>
+      <Entry name="src/main/java/ishoes/dao/message/impl/ApnsDAOImpl.java"/>
+      <Entry name="src/main/java/ishoes/dao/oauth/impl/OauthTokenDAOImpl.java"/>
+      <Entry name="src/main/java/ishoes/dao/oauth/OauthTokenDAO.java"/>
+      <Entry name="src/main/java/ishoes/dao/product/impl/ProductDAOImpl.java"/>
+      <Entry name="src/main/java/ishoes/dao/product/impl/ProductDistanceComparator.java"/>
+      <Entry name="src/main/java/ishoes/dao/product/ProductDAO.java"/>
+      <Entry name="src/main/java/ishoes/dao/user/impl/UserDAOImpl.java"/>
+      <Entry name="src/main/java/ishoes/dao/user/UserDAO.java"/>
+      <Entry name="src/main/java/ishoes/service/message/ApnsManager.java"/>
+      <Entry name="src/main/java/ishoes/service/message/impl/ApnsManagerImpl.java"/>
+      <Entry name="src/main/java/ishoes/service/product/impl/ProductLbsManagerImpl.java"/>
+      <Entry name="src/main/java/ishoes/service/product/impl/ProductManagerImpl.java"/>
+      <Entry name="src/main/java/ishoes/service/product/ProductLbsManager.java"/>
+      <Entry name="src/main/java/ishoes/service/product/ProductManager.java"/>
+      <Entry name="src/main/java/ishoes/service/user/impl/UserManagerImpl.java"/>
+      <Entry name="src/main/java/ishoes/service/user/UserManager.java"/>
+      <Entry name="src/main/java/ishoes/web/login/LoginController.java"/>
+      <Entry name="src/main/java/ishoes/web/login/OAuthController.java"/>
+      <Entry name="src/main/java/ishoes/web/login/RegisterController.java"/>
+      <Entry name="src/main/java/ishoes/web/login/UnLoginController.java"/>
+    </Files>
+    <FieldItems>
+      <FieldItem id="Type" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.type.label.codingStandards"/>
+        <Entry name="item.type.label.programLogic"/>
+        <Entry name="item.type.label.optimization"/>
+        <Entry name="item.type.label.usability"/>
+        <Entry name="item.type.label.clarity"/>
+        <Entry name="item.type.label.missing"/>
+        <Entry name="item.type.label.irrelevant"/>
+        <Entry name="item.type.label.suggestion"/>
+        <Entry name="item.type.label.other"/>
+      </FieldItem>
+      <FieldItem id="Severity" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.severity.label.critical"/>
+        <Entry name="item.severity.label.major"/>
+        <Entry name="item.severity.label.normal"/>
+        <Entry name="item.severity.label.minor"/>
+        <Entry name="item.severity.label.trivial"/>
+      </FieldItem>
+      <FieldItem id="Resolution" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.resolution.label.validNeedsfixing"/>
+        <Entry name="item.resolution.label.validFixlater"/>
+        <Entry name="item.resolution.label.validDuplicate"/>
+        <Entry name="item.resolution.label.validWontfix"/>
+        <Entry name="item.resolution.label.invalidWontfix"/>
+        <Entry name="item.resolution.label.unsureValidity"/>
+      </FieldItem>
+      <FieldItem id="Status" default="item.status.label.open">
+        <Entry name="item.status.label.open"/>
+        <Entry name="item.status.label.resolved"/>
+        <Entry name="item.status.label.closed"/>
+        <Entry name="item.status.label.reopened"/>
+      </FieldItem>
+    </FieldItems>
+    <Filters>
+      <Phase name="phase.individual" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="item.reviewer.label.automatic" enabled="true"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="" enabled="false"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="false"/>
+        <Filter name="Status" value="item.status.label.open" enabled="false"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+      <Phase name="phase.team" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="" enabled="false"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="" enabled="false"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="true"/>
+        <Filter name="Status" value="item.status.label.open" enabled="false"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+      <Phase name="phase.rework" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="" enabled="false"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="item.reviewer.label.automatic" enabled="true"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="false"/>
+        <Filter name="Status" value="item.status.label.open" enabled="true"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+    </Filters>
+  </Review>
+</Property>

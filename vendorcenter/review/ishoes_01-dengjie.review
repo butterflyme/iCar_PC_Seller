@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="ishoes_01">
+  <ReviewIssue id="H6NDMZCF">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-09-03 :: 17:38:32:943 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-09-04 :: 08:56:43:226 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>dengjie</ReviewerId>
+    <AssignedTo>kemin</AssignedTo>
+    <File line="42">src/main/java/ishoes/dao/message/impl/ApnsDAOImpl.java</File>
+    <Type>item.type.label.programLogic</Type>
+    <Severity>item.severity.label.normal</Severity>
+    <Summary>需要判断token是否为null</Summary>
+    <Description></Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.resolution.label.validNeedsfixing</Resolution>
+    <Status>item.status.label.resolved</Status>
+  </ReviewIssue>
+</Review>

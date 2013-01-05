@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-lazy-init="true">
+
+	<description>Email配置</description>
+
+	<!-- 邮件发送器，这里采用Gmail的配置，您可以配置自己的POP3 or SMTP服务，具体参考spring对email的支持 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="username" value="dengjie200@gmail.com" />
+		<property name="password" value="bailong200" />
+		<property name="port" value="465" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.timeout">25000</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.socketFactory.class">
+					javax.net.ssl.SSLSocketFactory
+				</prop>
+				<prop key="mail.smtp.socketFactory.fallback">
+					false
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 文本邮件服务类 -->
+	<bean id="simpleMailService" class="core.service.mail.SimpleMailService">
+		<property name="mailSender" ref="mailSender" />
+		<property name="textTemplate">
+			<value>
+			<![CDATA[
+			用戶%1$s在%2$tF被修改.
+					System Administrator.
+			]]>
+			</value>
+		</property>
+	</bean>
+
+	<!-- MIME邮件服务类 -->
+	<bean id="mimeMailService" class="core.service.mail.MimeMailService">
+		<property name="mailSender" ref="mailSender" />
+		<property name="freemarkerConfiguration" ref="freemarkerConfiguration"></property>
+	</bean>
+
+	<!-- 用于生成HTML邮件内容的Freemarker配置 -->
+	<bean id="freemarkerConfiguration" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+		<property name="templateLoaderPath" value="classpath:/email/template" />
+	</bean>
+</beans>
