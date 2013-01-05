@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-2.0.4.xsd">
+
+    <http auto-config="true" access-denied-page="/accessDenied.jsp">
+        <!-- 采用XML配置HTTP过滤的形式来做到对http请求的安全访问控制,和下面使用数据库方式不一样。如果采用它请将下面配置的filterSecurityInterceptor,databaseDefinitionSource,resourceDetailsService三个BEAN删除配置和代码。 -->
+        <intercept-url pattern="/images/**" filters="none" />  
+        <intercept-url pattern="/js/**" filters="none"/>  
+        <intercept-url pattern="/css/**" filters="none" /> 
+
+        <anonymous username="Guest"/>
+        <form-login login-page="/login.jsp"
+                authentication-failure-url="/login.jsp?error=true"
+                default-target-url="/user/login.do" />
+        <logout invalidate-session="true" logout-success-url="/login.jsp" logout-url="/vendorcenter_security_logout.do"/>
+    </http>
+
+    <authentication-provider user-service-ref="userDetailsService">
+        <!-- 盐值加密，把用户名-->
+        <password-encoder hash="md5">
+            
+        </password-encoder>
+    </authentication-provider>
+
+    <!-- 项目实现的用户查询服务 -->
+	<beans:bean id="userDetailsService" class="ishoes.service.security.UserDetailsServiceImpl">
+	    <beans:property name="userManager" ref="userManager"></beans:property>
+	</beans:bean>
+	
+	<!-- 重新定义的FilterSecurityInterceptor,使用databaseDefinitionSource提供的url-授权关系定义,采用数据库定义的方式需要在每次更改资源后要进行刷新内存操作，需要访问-->
+	<beans:bean id="filterSecurityInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor" autowire="byType">
+		<custom-filter before="FILTER_SECURITY_INTERCEPTOR" />
+		<beans:property name="objectDefinitionSource" ref="databaseDefinitionSource" />
+	</beans:bean>
+     
+	<!-- DefinitionSource工厂,使用resourceDetailsService提供的URL-授权关系. -->
+	<beans:bean id="databaseDefinitionSource" class="ishoes.service.security.DefinitionSourceFactoryBean">
+		<beans:property name="resourceDetailsService" ref="resourceDetailsService" />
+	</beans:bean>
+	
+	<!-- 项目实现的URL-授权查询服务 -->
+	<beans:bean id="resourceDetailsService" class="ishoes.service.security.ResourceDetailsServiceImpl">
+	    <beans:property name="resourceManager" ref="resourceManager"></beans:property>
+	</beans:bean>
+	
+</beans:beans>

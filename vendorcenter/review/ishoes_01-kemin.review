@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="ishoes_01">
+  <ReviewIssue id="H6NDUS5U">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-09-03 :: 17:44:36:882 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-09-04 :: 09:14:38:914 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>kemin</ReviewerId>
+    <AssignedTo>kemin</AssignedTo>
+    <File line="41">src/main/java/ishoes/web/login/RegisterController.java</File>
+    <Type>item.type.label.optimization</Type>
+    <Severity>item.label.unset</Severity>
+    <Summary>确认response流是否关闭</Summary>
+    <Description />
+    <Annotation />
+    <Revision>没有在这里操作过，不需要管它，container会处理</Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.resolved</Status>
+  </ReviewIssue>
+  <ReviewIssue id="H6NELW02">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-09-03 :: 18:05:41:570 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-09-03 :: 18:06:30:226 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>kemin</ReviewerId>
+    <AssignedTo>dengjie</AssignedTo>
+    <File line="47">src/main/java/ishoes/dao/product/impl/ProductDAOImpl.java</File>
+    <Type>item.type.label.optimization</Type>
+    <Severity>item.severity.label.normal</Severity>
+    <Summary>需要把SQL中查询时间范围的30做成配置文件中的值</Summary>
+    <Description>30</Description>
+    <Annotation />
+    <Revision />
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>
+

@@ -1,0 +1,1 @@
+mywish.sql是工程所需要的MYSQL版本的SQL脚本，里面带有一些DEMO数据。可以直接使用，方便学习

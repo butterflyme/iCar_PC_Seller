@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<project name="superLta" default="all">
+	<target name="all" depends="clean, compile" />
+
+	<target name="clean">
+		<delete dir="target" />
+	</target>
+	<path id="jar.classpath">
+		<fileset dir="WebRoot/WEB-INF/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<path id="compile.classpath">
+		<pathelement location="target/classes" />
+		<pathelement location="target/testclasses" />
+		<path refid="jar.classpath">
+		</path>
+	</path>
+	<target name="compile">
+
+		<copy todir="target/classes/resources">
+			<fileset dir="src/main/resources/">
+				<include name="jdbc.properties" />
+				<include name="jdbc-test.properties" />
+				<include name="log4j.properties" />
+				<include name="lbs-config.properties" />
+			</fileset>
+		</copy>
+		<copy todir="target/classes/resources/jdbc">
+			<fileset dir="src/main/resources/jdbc">
+				<include name="applicationContext-jdbc.xml" />
+			</fileset>
+		</copy>
+		<copy todir="target/classes/resources/spring">
+			<fileset dir="src/main/resources/spring">
+				<include name="applicationContext.xml" />
+				<include name="applicationContext-quartz.xml" />
+				<include name="applicationContext-memcached.xml" />
+				<include name="applicationContext-jackson.xml" />
+			</fileset>
+		</copy>
+		<copy todir="target/testclasses/resources">
+			<fileset dir="src/main/resources/">
+				<include name="jdbc.properties" />
+				<include name="jdbc-test.properties" />
+				<include name="log4j.properties" />
+				<include name="lbs-config.properties" />
+			</fileset>
+		</copy>
+		<copy todir="target/testclasses/resources/jdbc">
+			<fileset dir="src/main/resources/jdbc">
+				<include name="applicationContext-jdbc.xml" />
+			</fileset>
+		</copy>
+		<copy todir="target/testclasses/resources/spring">
+			<fileset dir="src/main/resources/spring">
+				<include name="applicationContext.xml" />
+				<include name="applicationContext-quartz.xml" />
+				<include name="applicationContext-memcached.xml" />
+				<include name="applicationContext-jackson.xml" />
+			</fileset>
+		</copy>
+		<!--	<delete dir="target/classes" />
+		<delete dir="target/testclasses" /> -->
+		<javac srcdir="src/main" debug="on" destdir="target/classes" encoding="UTF-8">
+			<classpath refid="compile.classpath">
+			</classpath>
+		</javac>
+		<javac srcdir="src/test" debug="on" destdir="target/testclasses" encoding="UTF-8">
+			<classpath refid="compile.classpath">
+			</classpath>
+		</javac>
+	</target>
+</project>
+
