@@ -5,7 +5,10 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//创建一个新分支做测试
+		
+		// 新分支名字:branchTest
 
 	}
 
